@@ -5,3 +5,6 @@ streamlit
 langchain_openai
 beautifulsoup4
 python_dotenv
+faiss
+faiss-gpu
+faiss-cpu
