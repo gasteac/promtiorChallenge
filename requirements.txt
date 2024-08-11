@@ -1,7 +1,7 @@
 langchain
-# langchain-community 
-# langchain-core
+langchain-community 
+langchain-core
 streamlit
-# langchain_openai
+langchain_openai
 beautifulsoup4
 python_dotenv
