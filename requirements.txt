@@ -6,3 +6,4 @@ langchain_openai
 beautifulsoup4
 python_dotenv
 faiss-cpu
+pymupdf
