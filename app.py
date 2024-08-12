@@ -85,6 +85,7 @@ if "vector_store" not in st.session_state:
 
 # Crear herramientas para el agente
 retriever = st.session_state.vector_store.as_retriever()
+# Le digo al agente que busque información sobre Promtior en los documentos indexados
 retriever_tool = create_retriever_tool(
     retriever,
     "promtior_search",
@@ -97,6 +98,7 @@ tools = [retriever_tool, search]
 # Configurar el agente
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 agent_prompt = hub.pull("hwchase17/openai-functions-agent")
+# Agente de OpenAI, con el LLM, las herramientas y el prompt para responder preguntas sobre Promtior 
 agent = create_openai_functions_agent(llm, tools, agent_prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
@@ -108,7 +110,7 @@ def get_response(user_input):
     return response["output"]
 
 
-# Interfaz del chatbot
+# Interfaz del chatbot con Streamlit
 user_query = st.chat_input("Ask your question here")
 if user_query:
     response = get_response(user_query)
