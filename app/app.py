@@ -133,6 +133,10 @@ def create_agent():
             ),
             (
                 "system",
+                "If somebody asks you about Promtior services, you should look in their website section 'services' and answer accordingly.",
+            ),
+            (
+                "system",
                 "You must only answer questions that are related to Promtior, they founders, personal, services, etc.",
             ),
             (
