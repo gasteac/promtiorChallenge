@@ -9,6 +9,5 @@ python_dotenv
 faiss-cpu
 pymupdf
 langchainhub
-"langserve[all]"
 langserve[all]
 fastapi
