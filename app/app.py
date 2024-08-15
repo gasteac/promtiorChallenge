@@ -41,10 +41,12 @@ LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 # URLs de Promtior o que contienen información relevante.
 urls = [
     "https://www.promtior.ai",
-    "https://infonegocios.biz/plus/con-tan-solo-un-ano-promtior-esta-bionizando-las-empresas-a-traves-de-la-adopcion-de-ia-generativa-y-se-expande-a-miami",
-    "https://cie.ort.edu.uy/emprendimientos/promptior",
-    "https://www.forbesuruguay.com/inteligencia-artificial/firma-uruguaya-asesora-empresas-ia-fue-elegida-100-startups-potenciarse-miami-n53538",
+    "https://www.promtior.ai/service",
+    "https://www.promtior.ai/use-cases",
     "https://www.linkedin.com/company/promtior-ai/about/",
+    # "https://infonegocios.biz/plus/con-tan-solo-un-ano-promtior-esta-bionizando-las-empresas-a-traves-de-la-adopcion-de-ia-generativa-y-se-expande-a-miami",
+    # "https://cie.ort.edu.uy/emprendimientos/promptior",
+    # "https://www.forbesuruguay.com/inteligencia-artificial/firma-uruguaya-asesora-empresas-ia-fue-elegida-100-startups-potenciarse-miami-n53538",
 ]
 
 ################## Esta función carga los documentos de las URLs y PDF's, los vuelve chunks, los transforma en vectores (valor semántico) y los indexa en una tienda de vectores (FAISS)
@@ -131,13 +133,17 @@ def create_agent():
                 "system",
                 "Your answers must be long and detailed.",
             ),
+            # (
+            #     "system",
+            #     "You must only answer questions that are related to Promtior, they founders, personal, services, etc.",
+            # ),
             (
                 "system",
                 "If somebody asks you about Promtior services, you should look in their website section 'services' and answer accordingly.",
             ),
             (
                 "system",
-                "You must only answer questions that are related to Promtior, they founders, personal, services, etc.",
+                "If you feel you don't have enough information, use the talivy tool to search for information on the internet about everything related to Promtior.",
             ),
             (
                 "system",
