@@ -75,7 +75,7 @@ def get_vectorStore_from_sources(urls):
 
     # Creamos la base de conocimiento con los vectores, OpenAIEmbeddings los transforma en vectores y luego se indexan
     vector_store = FAISS.from_documents(
-        chunks, OpenAIEmbeddings()
+        chunks, OpenAIEmbeddings(api_key=OPENAI_API_KEY)
     )
     return vector_store
 
@@ -121,7 +121,7 @@ def create_agent():
     # Configurar el agente, le damos un modelo y un prompt para responder preguntas.
 
     # Utilizamos el LLM de OpenAI
-    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, openai_api_key=OPENAI_API_KEY)
 
     # Prompt predefinido de OpenAI, sirve pero podemos hacer uno personalizado.
     # agent_prompt = hub.pull("hwchase17/openai-functions-agent")
