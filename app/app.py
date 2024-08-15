@@ -32,10 +32,6 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 # Traer variables de entorno del sistema, lo uso para las API keys en la instancia EC2 de AWS
 import os
-# os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
-# os.environ["TAVILY_API_KEY"] = "TAVILY_API_KEY"
-# os.environ["LANGCHAIN_TRACING_V2"] = "LANGCHAIN_TRACING_V2"
-# os.environ["LANGCHAIN_API_KEY"] = "LANGCHAIN_API_KEY"
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
