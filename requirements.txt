@@ -1,13 +1,10 @@
 langchain
+langchain-openai
 langchain-community 
 tavily-python
 langchain-core
 streamlit
-langchain_openai
 beautifulsoup4
 python_dotenv
 faiss-cpu
 pymupdf
-langchainhub
-langserve[all]
-fastapi
